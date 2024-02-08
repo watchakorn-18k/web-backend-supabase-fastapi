@@ -1,0 +1,1 @@
+d:/FILE_CODE_ALL/backend/python_supabase/env_sp/Scripts/uvicorn main:app --reload

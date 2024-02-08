@@ -1,0 +1,6 @@
+.env
+env_sp/
+*/__pycache__/*
+*.pyc
+*.pyo
+*.pyd
