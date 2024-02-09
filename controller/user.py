@@ -5,7 +5,8 @@ from repositorys.user_repo import UserRepository
 from services.user_service import UserService
 
 
-router = APIRouter()
+router_user = APIRouter()
+router = router_user
 
 user_service = UserService(UserRepository())
 
