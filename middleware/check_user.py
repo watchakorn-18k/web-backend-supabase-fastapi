@@ -12,12 +12,7 @@ def check_cookie_login(request: Request, response: Response) -> Response:
     if token_user:
         token_in_db = supabase_db.auth.get_session()
         if token_in_db:
-            token = token_in_db.access_token
-
-            return {
-                "status": "ok",
-                "data": {"access_token": token, "data_user": token_in_db},
-            }
+            return {"status": "ok", "data": token_in_db}
 
     if token_user == token_in_db:
         return supabase_db.auth.get_user()

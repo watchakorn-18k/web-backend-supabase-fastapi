@@ -208,3 +208,12 @@ curl -X 'POST' \
     }
 }
 ```
+
+- else return
+
+```json
+{
+  "status": "fail",
+  "data": "Please login"
+}
+```

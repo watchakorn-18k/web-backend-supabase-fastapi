@@ -21,6 +21,9 @@ async def index():
 
 
 @router.post("/add-course")
-async def add_course(course: Course):
+async def add_course(course: Course, response=Depends(check_cookie_login)):
+    status = response
+    if status["status"] == "fail":
+        return status
     add_course = course_service.add_course(course)
     return add_course
