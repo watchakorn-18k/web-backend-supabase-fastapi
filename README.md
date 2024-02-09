@@ -11,7 +11,9 @@ SUPABASE_KEY=""
 
 ## Endpoint
 
-### ` POST http://127.0.0.1:8000/signup`
+## user/
+
+### ` POST http://127.0.0.1:8000/user/signup`
 
 ```json
 {
@@ -22,7 +24,7 @@ SUPABASE_KEY=""
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/signup' \
+  'http://127.0.0.1:8000/user/signup' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -43,7 +45,7 @@ curl -X 'POST' \
   }
 ```
 
-### `POST http://127.0.0.1:8000/signin`
+### `POST http://127.0.0.1:8000/user/signin`
 
 ```json
 {
@@ -54,7 +56,7 @@ curl -X 'POST' \
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/signin' \
+  'http://127.0.0.1:8000/user/signin' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -95,13 +97,13 @@ curl -X 'POST' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/profile`
+## `GET http://127.0.0.1:8000/user/profile`
 
 ````
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/profile' \
+  'http://127.0.0.1:8000/user/profile' \
   -H 'accept: application/json'
 ````
 
@@ -126,11 +128,11 @@ curl -X 'GET' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/logout`
+## `GET http://127.0.0.1:8000/user/logout`
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/logout' \
+  'http://127.0.0.1:8000/user/logout' \
   -H 'accept: application/json'
 ```
 
@@ -143,4 +145,66 @@ curl -X 'GET' \
 }
 ```
 
-##
+## course/
+
+## `GET http://127.0.0.1:8000/course`
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/course' \
+  -H 'accept: application/json'
+```
+
+- if success
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "Python-101",
+      "created_at": "2024-02-09T16:57:12.126581+00:00",
+      "price": 200,
+      ..............]
+    }
+}
+```
+
+## `POST http://127.0.0.1:8000/course/add-course`
+
+```json
+{
+  "name": "python-101",
+  "price": 300,
+  "details": "basic python"
+}
+```
+
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/course/add-course' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name":"python-101",
+  "price":300,
+  "details":"basic python"
+}'
+```
+
+- if success
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "Python-101",
+      "created_at": "2024-02-09T16:57:12.126581+00:00",
+      "price": 200,
+      ..............]
+    }
+}
+```
