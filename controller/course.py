@@ -27,3 +27,9 @@ async def add_course(course: Course, response=Depends(check_cookie_login)):
         return status
     add_course = course_service.add_course(course)
     return add_course
+
+
+@router.get("/edit-course/{id}")
+async def edit_course(id):
+    edit_course = course_service.edit_course(id)
+    return edit_course
