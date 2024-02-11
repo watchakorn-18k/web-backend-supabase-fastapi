@@ -26,3 +26,11 @@ class CourseService:
         if edit_course == "error":
             return Status(status="fail", data=edit_course)
         return Status(status="ok", data=edit_course)
+
+    def get_course(self, id):
+        get_course = self.course_repository.get_course(id)
+        if get_course == "error":
+            return Status(status="fail", data=get_course)
+        if len(get_course) == 0:
+            return Status(status="fail", data=["data not found"])
+        return Status(status="ok", data=get_course)

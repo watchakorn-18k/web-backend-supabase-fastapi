@@ -1,5 +1,6 @@
 from fastapi import Response
 from config.supabasedb import supabase_db
+from models.course_model import Course
 
 
 supabase_db = supabase_db()
@@ -41,5 +42,12 @@ class CourseRepository:
                 .execute()
             )
             return edit_course
+        except Exception as e:
+            return "error", e
+
+    def get_course(self, id):
+        try:
+            get_course = supabase_db.table("courses").select("*").eq("id", id).execute()
+            return get_course.dict()["data"]
         except Exception as e:
             return "error", e
