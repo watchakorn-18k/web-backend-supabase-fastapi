@@ -8,6 +8,16 @@ Can you see the frontend code?
 https://github.com/watchakorn-18k/web-frontend-supabase
 ```
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+git clone https://github.com/watchakorn-18k/web-backend-supabase-fastapi
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
 ## .env
 
 ```env

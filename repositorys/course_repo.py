@@ -17,11 +17,11 @@ class CourseRepository:
         except Exception as e:
             return "error", e
 
-    def get_course_all(self):
+    def get_course_all(self) -> list:
         try:
             get_course_all, _ = supabase_db.table("courses").select("*").execute()
-            # print(get_course_all[1], type(get_course_all[1]))
-            return get_course_all[1]
+            sorted_course_all = list(sorted(get_course_all[1], key=lambda x: x["id"]))
+            return sorted_course_all
         except Exception as e:
             return "error", e
 
