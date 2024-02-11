@@ -147,6 +147,39 @@ curl -X 'GET' \
 
 ## course/
 
+## `GET http://127.0.0.1:8000/course/get-course/-id-` # change `-id-` to course id
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/course/get-course/-id-' \
+  -H 'accept: application/json'
+```
+
+- if success
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "Python-101",
+      "created_at": "2024-02-09T16:57:12.126581+00:00",
+      "price": 200,
+      ..............]
+    }
+}
+```
+
+- else return
+
+```json
+{
+  "status": "fail",
+  "data": "Please login"
+}
+```
+
 ## `GET http://127.0.0.1:8000/course`
 
 ```bash
@@ -265,11 +298,11 @@ curl -X 'POST' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/course/get-course/-id-` # change `-id-` to course id
+## `DELETE http://127.0.0.1:8000/course/delete-course/-id-` # change `-id-` to course id
 
 ```bash
-curl -X 'GET' \
-  'http://127.0.0.1:8000/course/get-course/-id-' \
+curl -X 'DELETE' \
+  'http://127.0.0.1:8000/course/delete-course/-id-' \
   -H 'accept: application/json'
 ```
 
@@ -286,6 +319,15 @@ curl -X 'GET' \
       "price": 200,
       ..............]
     }
+}
+```
+
+- case not found
+
+```json
+{
+  "status": "fail",
+  "data": ["1", "already deleted", "data not found"]
 }
 ```
 
