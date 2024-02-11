@@ -20,5 +20,9 @@ class CourseService:
             return Status(status="fail", data=add_course)
         return Status(status="ok", data=add_course)
 
-    def edit_course(self, id):
-        pass
+    def edit_course(self, id, course: Course):
+        course.id = id
+        edit_course = self.course_repository.edit_course(course)
+        if edit_course == "error":
+            return Status(status="fail", data=edit_course)
+        return Status(status="ok", data=edit_course)

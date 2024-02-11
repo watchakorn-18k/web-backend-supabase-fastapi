@@ -31,3 +31,15 @@ class CourseRepository:
             return add_course
         except Exception as e:
             return "error", e
+
+    def edit_course(self, course):
+        try:
+            edit_course = (
+                supabase_db.table("courses")
+                .update(course.dict())
+                .eq("id", course.id)
+                .execute()
+            )
+            return edit_course
+        except Exception as e:
+            return "error", e

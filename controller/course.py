@@ -29,7 +29,7 @@ async def add_course(course: Course, response=Depends(check_cookie_login)):
     return add_course
 
 
-@router.get("/edit-course/{id}")
-async def edit_course(id):
-    edit_course = course_service.edit_course(id)
+@router.patch("/edit-course/{id}")
+async def edit_course(id, course: Course):
+    edit_course = course_service.edit_course(id, course)
     return edit_course
