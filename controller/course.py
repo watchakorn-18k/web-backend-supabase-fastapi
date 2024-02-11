@@ -30,6 +30,9 @@ async def add_course(course: Course, response=Depends(check_cookie_login)):
 
 
 @router.patch("/edit-course/{id}")
-async def edit_course(id, course: Course):
+async def edit_course(id, course: Course, response=Depends(check_cookie_login)):
+    status = response
+    if status["status"] == "fail":
+        return status
     edit_course = course_service.edit_course(id, course)
     return edit_course
