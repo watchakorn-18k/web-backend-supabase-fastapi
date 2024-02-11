@@ -217,3 +217,50 @@ curl -X 'POST' \
   "data": "Please login"
 }
 ```
+
+## `PATCH http://127.0.0.1:8000/course/edit-course/-id-` # change `-id-` to course id
+
+```json
+{
+  "name": "python-101",
+  "price": 300,
+  "details": "basic python"
+}
+```
+
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/course/edit-course/-id-' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name":"python-101",
+  "price":300,
+  "details":"basic python"
+}'
+```
+
+- if success
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "Python-101",
+      "created_at": "2024-02-09T16:57:12.126581+00:00",
+      "price": 200,
+      ..............]
+    }
+}
+```
+
+- else return
+
+```json
+{
+  "status": "fail",
+  "data": "Please login"
+}
+```
