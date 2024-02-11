@@ -264,3 +264,36 @@ curl -X 'POST' \
   "data": "Please login"
 }
 ```
+
+## `GET http://127.0.0.1:8000/course/get-course/-id-` # change `-id-` to course id
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/course/get-course/-id-' \
+  -H 'accept: application/json'
+```
+
+- if success
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "Python-101",
+      "created_at": "2024-02-09T16:57:12.126581+00:00",
+      "price": 200,
+      ..............]
+    }
+}
+```
+
+- else return
+
+```json
+{
+  "status": "fail",
+  "data": "Please login"
+}
+```
