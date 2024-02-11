@@ -32,5 +32,13 @@ class CourseService:
         if get_course == "error":
             return Status(status="fail", data=get_course)
         if len(get_course) == 0:
-            return Status(status="fail", data=["data not found"])
+            return Status(status="fail", data=[id, "data not found"])
         return Status(status="ok", data=get_course)
+
+    def delete_course(self, id):
+        delete_course = self.course_repository.delete_course(id)
+        if delete_course == "error":
+            return Status(status="fail", data=delete_course)
+        if len(delete_course) == 0:
+            return Status(status="fail", data=[id, "already deleted", "data not found"])
+        return Status(status="ok", data=delete_course)

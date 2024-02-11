@@ -51,3 +51,10 @@ class CourseRepository:
             return get_course.dict()["data"]
         except Exception as e:
             return "error", e
+
+    def delete_course(self, id):
+        try:
+            delete_course = supabase_db.table("courses").delete().eq("id", id).execute()
+            return delete_course.dict()["data"]
+        except Exception as e:
+            return "error", e
