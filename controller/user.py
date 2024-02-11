@@ -4,6 +4,7 @@ from models.user_model import EmailModel, NewPasswordModel, UserModel
 from repositorys.user_repo import UserRepository
 from services.user_service import UserService
 
+# prefix /user
 
 router_user = APIRouter()
 router = router_user
