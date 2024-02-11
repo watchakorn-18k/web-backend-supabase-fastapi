@@ -49,6 +49,9 @@ async def get_course(id, response=Depends(check_cookie_login)):
 
 
 @router.delete("/delete-course/{id}")
-async def delete_course(id):
+async def delete_course(id, response=Depends(check_cookie_login)):
+    status = response
+    if status["status"] == "fail":
+        return status
     delete_course = course_service.delete_course(id)
     return delete_course
