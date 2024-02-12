@@ -9,3 +9,4 @@ class Course(BaseModel):
     created_at: Optional[str] = Field(default=datetime.now().isoformat())
     price: Optional[int]
     details: Optional[str] = Field(default=None)
+    uid: Optional[str]
