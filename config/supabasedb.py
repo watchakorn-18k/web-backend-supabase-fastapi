@@ -1,12 +1,7 @@
-import os
+import settings as ENV
 from supabase import create_client, Client
-import dotenv
-
-dotenv.load_dotenv()
 
 
 def supabase_db():
-    url: str = os.environ.get("SUPABASE_URL")
-    key: str = os.environ.get("SUPABASE_KEY")
-    supabase_client: Client = create_client(url, key)
+    supabase_client: Client = create_client(ENV.SUPABASE_URL, ENV.SUPABASE_KEY)
     return supabase_client
