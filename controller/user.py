@@ -1,8 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from urllib.parse import urlparse, parse_qs
+from fastapi import APIRouter, Depends, Query, Request, Response
 from middleware.check_user import check_cookie_login
 from models.user_model import EmailModel, NewPasswordModel, UserModel
 from repositorys.user_repo import UserRepository
 from services.user_service import UserService
+
 
 # prefix /user
 
@@ -34,12 +36,10 @@ async def signin(user: UserModel, response: Response):
     return {"status": "ok", "data": data_sign_in}
 
 
-@router.get("/confirm{token}")
-async def confirm(token: str, response: Response):
-    values = dict(item.split("=") for item in token.split("#")[1].split("&"))
-    response.set_cookie(key="access_token", value=values["access_token"], httponly=True)
-    response.set_cookie(key="type", value=values["type"], httponly=True)
-    return values
+# for callback from email
+@router.get("/confirm")
+async def confirm_email():
+    return {"status": "ok", "data": "verify email successfully"}
 
 
 @router.post("/chang-new-password")

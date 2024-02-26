@@ -31,7 +31,7 @@ SUPABASE_KEY=""
 
 ## user/
 
-### ` POST http://127.0.0.1:8000/user/signup`
+### ` POST http://127.0.0.1:8000/api/user/signup`
 
 ```json
 {
@@ -42,7 +42,7 @@ SUPABASE_KEY=""
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/user/signup' \
+  'http://127.0.0.1:8000/api/user/signup' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -63,7 +63,7 @@ curl -X 'POST' \
   }
 ```
 
-### `POST http://127.0.0.1:8000/user/signin`
+### `POST http://127.0.0.1:8000/api/user/signin`
 
 ```json
 {
@@ -74,7 +74,7 @@ curl -X 'POST' \
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/user/signin' \
+  'http://127.0.0.1:8000/api/user/signin' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -115,13 +115,13 @@ curl -X 'POST' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/user/profile`
+## `GET http://127.0.0.1:8000/api/user/profile`
 
 ````
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/user/profile' \
+  'http://127.0.0.1:8000/api/user/profile' \
   -H 'accept: application/json'
 ````
 
@@ -146,11 +146,11 @@ curl -X 'GET' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/user/logout`
+## `GET http://127.0.0.1:8000/api/user/logout`
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/user/logout' \
+  'http://127.0.0.1:8000/api/user/logout' \
   -H 'accept: application/json'
 ```
 
@@ -165,11 +165,11 @@ curl -X 'GET' \
 
 ## course/
 
-## `GET http://127.0.0.1:8000/course/get-course/-id-` # change `-id-` to course id
+## `GET http://127.0.0.1:8000/api/course/get-course/-id-` # change `-id-` to course id
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/course/get-course/-id-' \
+  'http://127.0.0.1:8000/api/course/get-course/-id-' \
   -H 'accept: application/json'
 ```
 
@@ -198,11 +198,11 @@ curl -X 'GET' \
 }
 ```
 
-## `GET http://127.0.0.1:8000/course`
+## `GET http://127.0.0.1:8000/api/course`
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/course' \
+  'http://127.0.0.1:8000/api/course' \
   -H 'accept: application/json'
 ```
 
@@ -222,7 +222,7 @@ curl -X 'GET' \
 }
 ```
 
-## `POST http://127.0.0.1:8000/course/add-course`
+## `POST http://127.0.0.1:8000/api/course/add-course`
 
 ```json
 {
@@ -234,7 +234,7 @@ curl -X 'GET' \
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/course/add-course' \
+  'http://127.0.0.1:8000/api/course/add-course' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -269,7 +269,7 @@ curl -X 'POST' \
 }
 ```
 
-## `PATCH http://127.0.0.1:8000/course/edit-course/-id-` # change `-id-` to course id
+## `PATCH http://127.0.0.1:8000/api/course/edit-course/-id-` # change `-id-` to course id
 
 ```json
 {
@@ -281,7 +281,7 @@ curl -X 'POST' \
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/course/edit-course/-id-' \
+  'http://127.0.0.1:8000/api/course/edit-course/-id-' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -316,11 +316,11 @@ curl -X 'POST' \
 }
 ```
 
-## `DELETE http://127.0.0.1:8000/course/delete-course/-id-` # change `-id-` to course id
+## `DELETE http://127.0.0.1:8000/api/course/delete-course/-id-` # change `-id-` to course id
 
 ```bash
 curl -X 'DELETE' \
-  'http://127.0.0.1:8000/course/delete-course/-id-' \
+  'http://127.0.0.1:8000/api/course/delete-course/-id-' \
   -H 'accept: application/json'
 ```
 

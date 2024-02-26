@@ -41,10 +41,10 @@ async def edit_course(id, course: Course, response=Depends(check_cookie_login)):
 
 
 @router.get("/get-course/{id}")
-async def get_course(id, response=Depends(check_cookie_login)):
-    status = response
-    if status["status"] == "fail":
-        return status
+async def get_course(id):
+    # status = response
+    # if status["status"] == "fail":
+    #     return status
     course = course_service.get_course(id)
     return course
 

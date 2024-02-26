@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI()
+app = FastAPI(title="web-backend-supabase-fastapi")
 
 origins = ["http://localhost", "http://localhost:3000", "*"]
 app.add_middleware(
@@ -16,6 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router_user, prefix="/user")
-app.include_router(router_course, prefix="/course")
-app.include_router(router_lesson, prefix="/course/lesson")
+app.include_router(router_user, prefix="/api/user")
+app.include_router(router_course, prefix="/api/course")
+app.include_router(router_lesson, prefix="/api/course/lesson")
